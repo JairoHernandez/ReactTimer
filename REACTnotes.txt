@@ -606,3 +606,5 @@ ReactTimer/app/styles/components/_navigation.scss
 ReactTimer/app/styles/app.scss
 	@import "base/variables"; // Equivalent to base/_variables.scss. Notice how it removes underscore and extension.
 	@import "components/navigation";
+
+Allows us to keep the files small for big applications, but it will create more files. None grow out of control and are more maintainable.

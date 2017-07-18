@@ -1,4 +1,17 @@
 // Define override.
-.top-bar {
+.top-bar, .top-bar ul {
     background-color: $nav-background;
 }
+
+.top-bar {
+    .menu-text {
+        color: $nav-text-color;
+    }
+    // Identical to .top-bar .menu-text {}. The advantage is you can nest multiple things under .top-bar.
+
+
+    .menu > .menu-text > a {
+        display: inline;
+        padding: 0;
+    }
+} 
