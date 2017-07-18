@@ -608,3 +608,18 @@ ReactTimer/app/styles/app.scss
 	@import "components/navigation";
 
 Allows us to keep the files small for big applications, but it will create more files. None grow out of control and are more maintainable.
+
+jairomh@ubuntu64-DevOps:~/REACT/ReactTimer$ heroku create
+Creating app... done, ⬢ vast-sea-20558
+https://vast-sea-20558.herokuapp.com/ | https://git.heroku.com/vast-sea-20558.git
+
+Verify heroku app is created.
+	jairomh@ubuntu64-DevOps:~/REACT/ReactTimer$ git remote -v
+	heroku	https://git.heroku.com/vast-sea-20558.git (fetch)
+	heroku	https://git.heroku.com/vast-sea-20558.git (push)
+	origin	git@github.com:JairoHernandez/ReactTimer.git (fetch)
+	origin	git@github.com:JairoHernandez/ReactTimer.git (push)
+
+-------------Basics of Testing-------------
+
+Michael Jackson Expect library.
