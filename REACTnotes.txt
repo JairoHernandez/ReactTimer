@@ -309,7 +309,7 @@ In browser this 'k' info is used by react router to keep track of state of appli
 	
 	<Route path="/" component={Main}>
 		<Route path="about" component={About}/> 
-		<IndexRoute component={Weather}/>
+		<IndexRoute component={Weather}/> // If nothing matches into the entered URL use this one.
 	</Route>		
 
 	The about component is found via this URL
@@ -641,7 +641,7 @@ ReactTimer/karma.conf.js
 			preprocessors: {
 				'app/tests/**/*.test.jsx': ['webpack', 'sourcemap'] // sourcemap uses actual jsx files and not bundle.js when getting errors
 			},
-			reporters: ['mocha'],
+			reporters: ['mocha'], // cleans up output
 			client: {
 				mocha: {
 					timeout: '5000'
