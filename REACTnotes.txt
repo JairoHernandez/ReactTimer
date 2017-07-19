@@ -623,3 +623,36 @@ Verify heroku app is created.
 -------------Basics of Testing-------------
 
 Michael Jackson Expect library.
+
+-------------Configuring Tests with Webpack and React------------
+
+~/REACT/ReactTimer$ npm install karma@0.13.22 karma-chrome-launcher@0.2.2 karma-mocha@0.2.2 karma-mocha-reporter@2.0.0 karma-sourcemap-loader@0.3.7 karma-webpack@1.7.0 mocha@2.4.5 expect@1.14.0 --save-dev
+
+Google karma test runner.
+Google mocha 'Getting started.
+
+ReactTimer/karma.conf.js
+	modules.exports = function(config) {
+		config.set({
+			browsers: ['Chrome'],
+			singleRun: true,
+			frameworks: ['mocha'],
+			files: ['app/tests/**/*.test.jsx'],
+			preprocessors: {
+				'app/tests/**/*.test.jsx': ['webpack', 'sourcemap'] // sourcemap uses actual jsx files and not bundle.js when getting errors
+			},
+			reporters: ['mocha'],
+			client: {
+				mocha: {
+					timeout: '5000'
+				}
+			},
+			webpack: webpackConfig,
+			webpackServer: {
+				noInfo: true // Set true if we dont care about webpackServer
+			}
+		});
+	}
+
+package.json
+	Replace "test": "echo \"Error: no test specified\" && exit 1" with "test": "karma start"
