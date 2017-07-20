@@ -630,6 +630,7 @@ Michael Jackson Expect library.
 
 Google karma test runner.
 Google mocha 'Getting started.
+Karma is connected to webpackconfig.js.
 
 ReactTimer/karma.conf.js
 	modules.exports = function(config) {
@@ -656,3 +657,15 @@ ReactTimer/karma.conf.js
 
 package.json
 	Replace "test": "echo \"Error: no test specified\" && exit 1" with "test": "karma start"
+
+-------------Clock Component------------
+
+Under tests folder emulate the components folder structure and its files by also adding a components folder under tests folder
+along with the same filenames.
+
+React also brings this package to make testing easier.
+
+$ npm install react-addons-test-utils@0.14.7 --save-dev
+
+To run a test that uses a component you have to access the methods on it with TestUtils.
+	var clock = TestUtils.renderIntoDocument(<Clock/>);	// This is exactly the same way you would access a component in any file.
