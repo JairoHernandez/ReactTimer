@@ -12,9 +12,21 @@ describe('Clock', () => {
     });
 });
 
+describe('render', () => {
+    it('it should render clock to output', () => {
+        var clock = TestUtils.renderIntoDocument(<Clock totalSeconds={62}/>);
+        //console.log('render clock out: ' + clock);
+        var $el = $(ReactDOM.findDOMNode(clock)); // Converts component to html rendered to browser. $el is a jquery selector.
+        var actualText = $el.find('.clock-text').text();
+
+        expect(actualText).toBe('01:02');
+    });
+});
+
 describe('formatSeconds', () => {
     it('should format seconds', () => {
         var clock = TestUtils.renderIntoDocument(<Clock/>);
+        console.log('render format seconds: ' + clock);
         var seconds = 615;
         var expected = '10:15';
         var actual = clock.formatSeconds(seconds);

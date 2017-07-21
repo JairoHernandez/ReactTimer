@@ -60,7 +60,7 @@ Do this to pass data via a 'name' property.
 
 	var Greeter = React.createClass({
 
-		getDefaultProps: function() {
+		getDefaultProps: function() { // Used when props are not passed down from the parent.
 			return {
 				name: 'React', // This is a prop accessed by this.props.
 				message: 'This is React message.'
@@ -669,3 +669,9 @@ $ npm install react-addons-test-utils@0.14.7 --save-dev
 
 To run a test that uses a component you have to access the methods on it with TestUtils.
 	var clock = TestUtils.renderIntoDocument(<Clock/>);	// This is exactly the same way you would access a component in any file.
+
+RECAP:
+
+1. Create Clock.jsx to write function formatSeconds that formats seconds into readable time xx:xx.
+2. Create Clock.test.jsx to used returned result of formatSeconds to make sure it returns expected result.
+3. Put Clock.jsx component to return time xx:xx in render function of Countdown.jsx. 
