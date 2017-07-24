@@ -690,3 +690,19 @@ https://github.com/mjackson/expect
 
 	expect(spy).toHaveBeenCalled()	
 	expect(spy).toNotHaveBeenCalled()
+
+------------Starting the Countdown------------
+
+Keep track of the state:
+	Is the countdown stopped, paused, started?
+
+	handleSetCountdown: function(seconds) {
+        this.setState({
+            count: seconds, // Assigned to from the form input.
+            countdownStatus: 'started' // HOW DO WE LISTEN FOR THIS CHANGE? BY USING COMPONENT LIFECYCLE methods
+
+You can call component lifecycle method everytime your state is updated.
+
+------------Testing that Counting Down Works------------
+
+2:45

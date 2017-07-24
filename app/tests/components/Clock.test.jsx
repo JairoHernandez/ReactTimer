@@ -26,7 +26,7 @@ describe('render', () => {
 describe('formatSeconds', () => {
     it('should format seconds', () => {
         var clock = TestUtils.renderIntoDocument(<Clock/>);
-        console.log('render format seconds: ' + clock);
+        //console.log('render format seconds: ' + clock);
         var seconds = 615;
         var expected = '10:15';
         var actual = clock.formatSeconds(seconds);
