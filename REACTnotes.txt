@@ -675,3 +675,18 @@ RECAP:
 1. Create Clock.jsx to write function formatSeconds that formats seconds into readable time xx:xx.
 2. Create Clock.test.jsx to used returned result of formatSeconds to make sure it returns expected result.
 3. Put Clock.jsx component to return time xx:xx in render function of Countdown.jsx. 
+
+-------------Countdown Form------------
+
+Remember that a parent can pass a function down into the child. The child can call that function and the parent can take action based on any 
+parameters that get passed up. In this case we pass UP the seconds.
+
+	<input type="text" ref="seconds" placeholder="Enter time in seconds"/>
+
+------------Testing Our Form With Spies------------
+
+spy tests where the spy is the function being called.
+https://github.com/mjackson/expect
+
+	expect(spy).toHaveBeenCalled()	
+	expect(spy).toNotHaveBeenCalled()
