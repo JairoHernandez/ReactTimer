@@ -710,4 +710,8 @@ CountdownForm.test.jsx
 
 ------------Creating Our Controls------------
 
+------------Pausing Starting Resetting------------
 
+Fires event to pause countdown.
+Render the countdown form when countdown status is stopped.
+If countdown is started or paused then render controls.
