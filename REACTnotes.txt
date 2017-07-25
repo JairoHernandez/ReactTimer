@@ -705,4 +705,9 @@ You can call component lifecycle method everytime your state is updated.
 
 ------------Testing that Counting Down Works------------
 
-2:45
+CountdownForm.test.jsx
+	it('should set state to started and countdown', (done) => { // 'done' allows mocha to run async test via setTimeout().
+
+------------Creating Our Controls------------
+
+
