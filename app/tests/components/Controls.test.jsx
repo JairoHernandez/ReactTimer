@@ -12,16 +12,19 @@ describe('Controls', () => {
     });
 
     describe('render', () => {
-        it('should render Pause when started', () => {
-            var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="started"/>);
+        it('should render Pause when started', () => { 
+            // Empty onStatusChange property is needed to avoid harmless ERROR/Warning
+            // ERROR: 'Warning: Failed propType: Required prop `onStatusChange` was not specified in `Controls`.'
+            var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="started" onStatusChange={() => {}}/>);
             var $el = $(ReactDOM.findDOMNode(controls));
             var $pauseButton = $el.find('button:contains(Pause)');
 
             expect($pauseButton.length).toBe(1);
         });
 
-        it('should render Start when pauseed', () => {
-            var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="paused"/>);
+        it('should render Start when paused', () => {
+            // Same goes here to avoid harmless ERROR/Warning from above.
+            var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="paused" onStatusChange={() => {}}/>);
             var $el = $(ReactDOM.findDOMNode(controls));
             var $startButton = $el.find('button:contains(Start)');
 

@@ -748,3 +748,10 @@ Controls.jsx
     componentWillRecieveProps: function(newProps) { 
         console.log('componentWillReceiveProps', newProps.countdownStatus);
     },
+
+Controls.test.jsx
+	describe('render', () => {
+			it('should render Pause when started', () => { 
+				// Empty onStatusChange property is needed to avoid harmless ERROR/Warning
+				// ERROR: 'Warning: Failed propType: Required prop `onStatusChange` was not specified in `Controls`.'
+				var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="started" onStatusChange={() => {}}/>);
