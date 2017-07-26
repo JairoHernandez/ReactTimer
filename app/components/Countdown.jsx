@@ -11,7 +11,7 @@ var Countdown = React.createClass({
         }
     },
 
-    // Called after either props or state(countdownStatus) gets updated. 
+    // Called after props or state(countdownStatus) gets updated for this component.
     // Compares countdownStatus in handleSetCountdown vs. getInitialState.
     // Where prevState is 'stopped' from getInitialState.
     componentDidUpdate: function(prevProps, prevState) {
@@ -30,12 +30,36 @@ var Countdown = React.createClass({
         }
     },
 
+    // // Fires before props or state gets updated. Unlike componentDidUpdate instead of 
+    // // taking in previous props and state it takes in new props and state.
+    // componentWillUpdate: function(nextProps, nextState) { 
+
+    // },
+
+    // componentWillMount: function() { // Fires right before component is shown to screen
+    //     console.log('componentWillMount');
+    // },
+
+    // componentDidMount: function() { // Fired right after everything is rendered in the DOM.
+    //     console.log('componentDidMount');
+    // },
+
+    componentWillUnmount: function() { // executes when going from Countdown page to clicking Timer page
+        //console.log('componentDidUnmount');
+        clearInterval(this.timer);
+        this.timer = undefined;
+    },
+
     startTimer: function() {
         this.timer = setInterval(() => {
             var newCount = this.state.count - 1;
             this.setState({
                 count: newCount >=0 ? newCount : 0
             });
+
+        if (newCount === 0) { // Show the input form again once count is zero.
+            this.setState({countdownStatus: 'stopped'});
+        }
         }, 1000);
     },
 
@@ -54,11 +78,10 @@ var Countdown = React.createClass({
 
         var {count, countdownStatus} = this.state;
         var renderControlArea = () => {
-            console.log(countdownStatus);
+            
             if (countdownStatus !== 'stopped') {
                 return <Controls countdownStatus={countdownStatus} onStatusChange={this.handleStatusChange}/>
             } else {
-                console.log('test');
                 return <CountdownForm onSetCountdown={this.handleSetCountdown}/>
             }
         };

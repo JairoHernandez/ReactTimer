@@ -715,3 +715,36 @@ CountdownForm.test.jsx
 Fires event to pause countdown.
 Render the countdown form when countdown status is stopped.
 If countdown is started or paused then render controls.
+
+------------Component Lifecycle------------
+
+When you click between links 'Countdown' and 'Timer' you can run code(function) to make something happen.
+
+Countdown.jsx
+	Automtically gets fired right before component gets removed from the DOM hence 
+	visually removed from the browser.
+		
+		componentWillUnmount: function() { // executes when going from Countdown page to clicking Timer page
+
+	Here are more.
+
+		// Fires before props or state gets updated. Unlike componentDidUpdate instead of 
+		// taking in previous props and state it takes in new props and state.
+		componentWillUpdate: function(nextProps, nextState) { 
+
+		},
+
+		componentWillMount: function() { // Fires right before component is shown to screen
+			console.log('componentWillMount');
+		},
+
+		componentDidMount: function() { // Fired right after everything is rendered in the DOM.
+			console.log('componentDidMount');
+		},
+
+Controls.jsx
+	// Listens and shows every update of a prop passed to this component from the parent 
+    // so we can now liste to lifecycle method that watches for this change.
+    componentWillRecieveProps: function(newProps) { 
+        console.log('componentWillReceiveProps', newProps.countdownStatus);
+    },

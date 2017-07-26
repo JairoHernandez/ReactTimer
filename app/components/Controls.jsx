@@ -12,8 +12,14 @@ var Controls = React.createClass({
         }
     },
 
+    // // Listens and shows every update of a prop passed to this component from the parent 
+    // // so we can now liste to lifecycle method that watches for this change.
+    // componentWillReceiveProps: function(newProps) { 
+    //     console.log('componentWillReceiveProps', newProps.countdownStatus);
+    // },
+
     render: function() {
-        var {countdownStatus} = this.props;
+        var {countdownStatus} = this.props; // this.props are being passed down from parent Countdown.jsx.
         var renderStartStopButton = () => {
             if (countdownStatus === 'started') {
                 return <button className="button secondary" onClick={this.onStatusChange('paused')}>Pause</button>
