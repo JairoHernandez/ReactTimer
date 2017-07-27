@@ -70,8 +70,8 @@ var Countdown = React.createClass({
         });
     },
 
-    handleStatusChange: function(newStatus) {
-        this.setState({countdownStatus: newStatus});
+    handleStatusChange: function(newStatus) { // changes timer status
+        this.setState({countdownStatus: newStatus}); 
     },
 
     render: function() {
