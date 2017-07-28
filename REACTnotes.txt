@@ -755,3 +755,13 @@ Controls.test.jsx
 				// Empty onStatusChange property is needed to avoid harmless ERROR/Warning
 				// ERROR: 'Warning: Failed propType: Required prop `onStatusChange` was not specified in `Controls`.'
 				var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="started" onStatusChange={() => {}}/>);
+
+------------Foundation Settings & Karma Issues------------
+
+If you want to make a change and you wan to make a change to every foundation element it's best to just
+tweak _foundation-settings.scss(which a config copy of 
+
+/home/jairomh/REACT/ReactTimer/node_modules/foundation-sites/scss/settings/_settings.scss
+
+You can overwrite it with css but that's only going to get messier when making changes to 
+a subset of buttons instead of all buttons.
