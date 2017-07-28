@@ -12,6 +12,9 @@ var Timer = React.createClass({
         }
     },
 
+    // Called after props or state(countdownStatus) gets updated for this component.
+    // Compares countdownStatus in handleSetCountdown vs. getInitialState.
+    // Where prevState is 'stopped' from getInitialState.
     componentDidUpdate: function(prevProps, prevState) {
         if (this.state.timerStatus !== prevState.timerStatus) {
             switch (this.state.timerStatus) {
