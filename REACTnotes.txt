@@ -765,3 +765,42 @@ tweak _foundation-settings.scss(which a config copy of
 
 You can overwrite it with css but that's only going to get messier when making changes to 
 a subset of buttons instead of all buttons.
+
+------------FINAL BOILER PLATE------------
+
+Make sure these 5 things run after deleting stuff.
+
+1). jairomh@ubuntu64-DevOps:~/REACT/ReactBoilerplate3$ npm test
+
+> boilerplate@1.0.0 test /home/jairomh/REACT/ReactBoilerplate3
+> karma start
+
+
+START:
+28 07 2017 17:17:15.132:INFO [karma]: Karma v0.13.22 server started at http://localhost:9876/
+28 07 2017 17:17:15.148:INFO [launcher]: Starting browser Chrome
+28 07 2017 17:17:18.543:INFO [Chrome 56.0.2924 (Linux 0.0.0)]: Connected on socket VS_Nj0HzvFUE4eUSAAAA with id 82358568
+  App
+    ✔ should properly run tests
+
+Finished in 0.115 secs / 0.001 secs
+
+SUMMARY:
+✔ 1 test completed
+
+2). jairomh@ubuntu64-DevOps:~/REACT/ReactBoilerplate3$ webpack
+Hash: c2a1872b10b029d21c07
+Version: webpack 1.15.0
+Time: 4826ms
+             Asset     Size  Chunks             Chunk Names
+./public/bundle.js  2.96 MB       0  [emitted]  main
+   [0] multi main 52 bytes {0} [built]
+    + 232 hidden modules
+
+3). jairomh@ubuntu64-DevOps:~/REACT/ReactBoilerplate3$ node server.js 
+Express server up on port 3000
+
+4. Delete node_modules folder.
+5. Remove git repos.
+
+rm -rf ./.git/

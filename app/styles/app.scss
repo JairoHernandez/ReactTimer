@@ -5,6 +5,7 @@
 @import "foundation";
 @include foundation-everything;
 
+// Components
 @import "components/navigation";
 @import "components/clock";
 @import "components/controls";
